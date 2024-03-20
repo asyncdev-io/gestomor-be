@@ -4,6 +4,7 @@ import { ClientController } from './clients.controller';
 import { Client, ClientSchema } from "./schema/client.schema"
 import { MongooseModule } from '@nestjs/mongoose';
 import { Administrator, AdministratorSchema } from 'src/admins/schema/admin.schema';
+import { AdminService } from './clients.service';
 
 @Module({
   imports: [MongooseModule.forFeature([
@@ -17,6 +18,6 @@ import { Administrator, AdministratorSchema } from 'src/admins/schema/admin.sche
     }
   ])],
   controllers: [ClientController],
-  providers: [ClientService],
+  providers: [ClientService, AdminService], // Asegúrate de incluir AdminService aquí
 })
 export class ClientsModule {}
