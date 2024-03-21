@@ -23,7 +23,7 @@ export class OrdersService {
 
   
 
-  @UseInterceptors(
+  /*@UseInterceptors(
     FileInterceptor(
        "file",
        {
@@ -35,7 +35,7 @@ export class OrdersService {
         })
        }
     )
-  )
+  ) */
 
   async create(@UploadedFile() file: Express.Multer.File,createOrderDto: CreateOrderDto): Promise<string> {
     const order = new this.orderModel(createOrderDto);
